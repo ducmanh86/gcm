@@ -44,7 +44,7 @@ auth = Auth(db)
 crud, service, plugins = Crud(db), Service(), PluginManager()
 
 ## create all tables needed by auth if not custom tables
-auth.define_tables(username=False, signature=False)
+auth.define_tables(username=False, signature=True)
 
 ## configure email
 mail = auth.settings.mailer
@@ -81,3 +81,8 @@ use_janrain(auth, filename='private/janrain.key')
 
 ## after defining tables, uncomment below to enable auditing
 # auth.enable_record_versioning(db)
+
+## Google Api Key
+GOOGLE_API_KEY = "AIzaSyCZmajLszuymA6aP9TQS8WR3fXoMicvdoA"
+GCM_SEND_HOST = "android.googleapis.com"
+GCM_SEND_URL = "/gcm/send"
